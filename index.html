@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-	<title>My title1</title>
+	<title>My title</title>
 
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -9,9 +9,27 @@
 	<meta name="description" content="" />
 
 	<link href="#" rel="stylesheet" type="text/css">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script src="myApp.js"></script>
 
 </head>
-<body>
+<body ng-app = "toDoApp">
+	
+	<div ng-controller="toDoList">
+		<ul>
+			<li ng-repeat="item in toDoList">
+				{{item}}
+				<span ng-click="removeItem($index)">&times;</span>
+			</li>
+		</ul>
+		<input ng-model="addMe">
+		<button ng-click="addItem()">Add</button>
+		<p>{{errortext}}</p>
+	</div>
+
+	
+	
 
 </body>
 </html>
