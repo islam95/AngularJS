@@ -1,0 +1,43 @@
+body {
+	font-family: 'Tahoma', sans-serif;
+	font-size: 14px;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+md-sidenav {
+	background-image:url(img/sidenav.png);
+	background-repeat: no-repeat;
+	font-weight: bold;
+	color: white;
+	padding: 20px;
+}
+
+md-content {
+	background-image:url(img/bg.jpg);
+	background-repeat: no-repeat;
+}
+
+#content {
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 5px;
+}
+
+.avatar {
+	position: relative;
+	width: 128px;
+	height: 128px;
+	border: 1px solid #ddd;
+	border-radius: 50%;
+	display: inline-block;
+	overflow: hidden;
+	margin: 0px;
+	vertical-align: middle;
+	zoom:0.70
+	transform: translateZ(0);
+	-webkit-transform: scale(0.70);
+	-moz-transform: scale(0.70);
+}
+
+

@@ -1,22 +1,71 @@
 <!doctype html>
 <html>
 <head>
-	<title>My title</title>
+	<title>Projects</title>
 
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="Author" content="Islam Dudaev" />
-	<meta name="description" content="" />
+	<meta name="description" content="The AgularJS task for getting a job." />
 
-	<link href="#" rel="stylesheet" type="text/css">
+	<!-- Angular Material style sheet -->
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+	<link href="styles.css" rel="stylesheet" type="text/css">
 	
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-	<script src="myApp.js"></script>
-
 </head>
-<body ng-app = "toDoApp">
+<body ng-app="toDoApp" layout="column">
+	<!-- Angular Material requires Angular.js Libraries -->
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+	<!-- Angular Material Library -->
+	<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+	<script src="myApp.js"></script>
 	
-	<div ng-controller="toDoList">
+	
+	
+	
+	
+	
+	<div class="container" layout="row" flex>
+		
+		<md-sidenav md-is-locked-open="true">
+		
+			<img src="img/userPhoto.gif" class="avatar">
+			Trevor Reyes
+			
+			<md-list>
+				<md-list-item>
+					<md-button>
+						Private 8
+					</md-button>
+				</md-list-item>
+				<md-list-item>
+					<md-button>
+						Decode 25
+					</md-button>
+				</md-list-item>
+			</md-list>
+		
+		</md-sidenav>
+		
+
+		
+		
+		<md-content id="content" flex>
+			
+			Content
+		</md-content>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<!--
 		<ul>
 			<li ng-repeat="item in toDoList">
 				{{item}}
@@ -26,10 +75,7 @@
 		<input ng-model="addMe">
 		<button ng-click="addItem()">Add</button>
 		<p>{{errortext}}</p>
-	</div>
-
+	-->
 	
-	
-
 </body>
 </html>

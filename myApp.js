@@ -1,7 +1,7 @@
-var app = angular.module("toDoApp", []);
+var app = angular.module("toDoApp", ["ngMaterial"]);
 
 app.controller("toDoList", function($scope){
-	$scope.toDoList = ["to do this", "something", "do something else"];
+	$scope.toDoList = ["Create a company", "Call in barber shop", "Earn a lot of money", "Go to the shop", "Buy gifts", "Brush teeth"];
 	// добавляет элемент в список
 	$scope.addItem = function (){
 		// выдать ошибку если элемент дуплекат
