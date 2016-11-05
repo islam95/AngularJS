@@ -25,7 +25,7 @@
 	
 		<section layout="row" flex>
 	
-		    <md-sidenav class="md-sidenav-left side" md-component-id="left" 
+		    <md-sidenav class="md-sidenav-left side sidePadding" md-component-id="left" 
 		    	md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="1">
 		    	<!--
 		    	<md-card>
@@ -40,21 +40,18 @@
 				</md-card> 
 				-->
 		    	
-				
 				<md-list>
 					<md-list-item class="md-1-line" ng-repeat="item in messages">
+						<img src="img/photoFrame.png" class="photoFrame">
 						<img ng-src="{{item.face}}?{{$index}}" class="md-avatar">
-							<div class="md-list-item-text">
+						<div class="md-list-item-text">
 							<h4>{{item.name}}</h4>
-        					</div>
-        
+						</div>
 					</md-list-item>
-	  			</md-list>
-	
-	
-	
-	
-	
+				</md-list>
+					
+				
+					
 		    	
 		    	<!--
 		    	<user-card name="User name"></user-card>

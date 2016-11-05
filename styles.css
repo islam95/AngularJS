@@ -3,32 +3,34 @@
 	background-repeat: no-repeat;
 	color: white;
 }
+.sidePadding {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
 md-list-item .md-avatar {
 	width: 50px;
 	height: 50px;
 }
+
+.photoFrame {
+	position: absolute;
+	border-image: url(img/photoFrame.png);
+	margin-left: -5px;
+}
+
+
 
 
 
 
 
 /*
-.photoFrame {
-	background-image:url(img/photoFrame.jpg);
-}
-
 md-card {
 	background-color: #292C33;
 	color: #FFFFFF;	
 }
 */
-
-
-
-
-
-
-
 
 .main {
 	background-image:url(img/bg.jpg);
