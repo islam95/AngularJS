@@ -27,9 +27,41 @@
 	
 		    <md-sidenav class="md-sidenav-left side" md-component-id="left" 
 		    	md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="1">
+		    	<!--
+		    	<md-card>
+					<md-card-header>
+						<md-card-avatar>
+						<img class="md-user-avatar" src="img/userPhoto.jpg">
+						</md-card-avatar>
+						<md-card-header-text>
+						<span>Trevor Reyes</span>
+						</md-card-header-text>
+					</md-card-header>
+				</md-card> 
+				-->
 		    	
+				
+				<md-list>
+					<md-list-item class="md-1-line" ng-repeat="item in messages">
+						<img ng-src="{{item.face}}?{{$index}}" class="md-avatar">
+							<div class="md-list-item-text">
+							<h4>{{item.name}}</h4>
+        					</div>
+        
+					</md-list-item>
+	  			</md-list>
+	
+	
+	
+	
+	
 		    	
+		    	<!--
+		    	<user-card name="User name"></user-card>
 		    	
+		    	<md-divider md-inset ng-if="!$last"></md-divider>
+		    	-->
+	
 		    </md-sidenav>
 		
 		    <md-content flex layout-padding class="middle">

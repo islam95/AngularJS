@@ -26,6 +26,12 @@ app.controller('AppCtrl', function ($scope, $timeout, $mdSidenav, $log) {
     $scope.isOpenRight = function(){
       return $mdSidenav('right').isOpen();
     };
+    // User photo and name
+    var imagePath = 'img/userPhoto.jpg';
+    $scope.messages = [{
+      face: imagePath,
+      name: 'Trevor Reyes'   
+    }];
     /**
      * Supplies a function that will continue to operate until the
      * time is up.
@@ -95,4 +101,21 @@ app.config(function($mdThemingProvider) {
       .primaryPalette('grey')
       .dark();
 });
+
+/*
+app.directive('userCard', function () {
+    return {
+      restrict: 'E',
+      templateUrl: 'userCard.tmpl.html',
+      scope: {
+        name: '@',
+        theme: '@'
+      },
+      controller: function ($scope) {
+        $scope.theme = $scope.theme || 'default';
+      }
+    }
+});
+*/
+
 
