@@ -2,18 +2,15 @@
 <html>
 <head>
 	<title>Projects</title>
-
-	<meta charset="utf-8">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="Author" content="Islam Dudaev" />
 	<meta name="description" content="The AgularJS task for getting a job." />
-
 	<!-- Angular Material style sheet -->
 	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
 	<link href="styles.css" rel="stylesheet" type="text/css">
-	
 </head>
-<body ng-app="toDoApp" layout="column">
+<body ng-app="myApp" ng-cloak>
+	<!------------------------------------------------->
 	<!-- Angular Material requires Angular.js Libraries -->
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
@@ -22,19 +19,72 @@
 	<!-- Angular Material Library -->
 	<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
 	<script src="myApp.js"></script>
+	<!------------------------------------------------->
 	
+	<div ng-controller="AppCtrl" layout="column" style="height:100%;" ng-cloak>
 	
+		<section layout="row" flex>
 	
+		    <md-sidenav class="md-sidenav-left side" md-component-id="left" 
+		    	md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="1">
+		    	
+		    	
+		    	
+		    </md-sidenav>
+		
+		    <md-content flex layout-padding class="middle">
+		        <div layout="column" layout-align="top center">
+			        <div>
+			            <md-button ng-click="toggleLeft()" class="md-primary" hide-gt-md>
+				            Toggle left
+			            </md-button>
+			        </div>
+		        	<div>
+						<md-button ng-click="toggleRight()" ng-hide="isOpenRight()" class="md-primary">
+							Toggle right
+						</md-button>
+		        	</div>
+		        </div>
+		        
+				
+				<div flex></div>
+		    </md-content>
 	
-	
+		    <md-sidenav class="md-sidenav-right md-whiteframe-4dp side" md-component-id="right">
+		
+		        <md-toolbar class="side">
+		        	<p style="text-align: center;">Create new project</p>
+		        </md-toolbar>
+		      
+		        <md-content ng-controller="RightCtrl" md-theme="myTheme" class="side" layout-padding>
+			        <form>
+			            <md-input-container>
+			            	<label style="color:#f6f6f6" for="projectName">Project name</label>
+							<input type="text" id="projectName" ng-model="data" md-autofocus>
+			            </md-input-container>
+			        </form>
+			        <md-button ng-click="close()" class="md-primary">
+			        	Close
+			        </md-button>
+		        </md-content>  
+			</md-sidenav>
+		</section>
+	</div>
+
+		
+	<!---------------------------------------------
 	
 	<div class="container" layout="row" flex>
 		
 		<md-sidenav md-is-locked-open="true">
 		
-			<img src="img/userPhoto.gif" class="avatar">
-			Trevor Reyes
-			
+			<div class="photo">
+				<img src="img/userPhoto.gif" class="avatar">
+			</div>
+			<div class="name">
+				Trevor Reyes
+			</div>
+				
 			<md-list>
 				<md-list-item>
 					<md-button>
@@ -50,20 +100,10 @@
 		
 		</md-sidenav>
 		
-
-		
-		
 		<md-content id="content" flex>
-			
-			Content
+		
 		</md-content>
 	</div>
-	
-	
-	
-	
-	
-	
 	
 	<!--
 		<ul>
