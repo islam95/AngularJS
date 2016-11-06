@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
 	<title>Projects</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,8 +10,8 @@
 	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
 	<link href="styles.css" rel="stylesheet" type="text/css">
 </head>
+
 <body ng-app="myApp" ng-cloak>
-	<!------------------------------------------------->
 	<!-- Angular Material requires Angular.js Libraries -->
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
@@ -20,14 +21,13 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
 	<script src="myApp.js"></script>
 	<!------------------------------------------------->
-	
+
 	<div ng-controller="AppCtrl" layout="column" style="height:100%;" ng-cloak>
-	
+		
 		<section layout="row" flex>
-	
-		    <md-sidenav class="md-sidenav-left side sidePadding" md-component-id="left" 
-		    	md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="1">
-		    	<!--
+			<!--============== LEFT SIDE ==================-->
+			<md-sidenav class="md-sidenav-left side sidePadding" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="1">
+				<!--
 		    	<md-card>
 					<md-card-header>
 						<md-card-avatar>
@@ -39,7 +39,6 @@
 					</md-card-header>
 				</md-card> 
 				-->
-		    	
 				<md-list>
 					<md-list-item class="md-1-line" ng-repeat="item in messages">
 						<img src="img/photoFrame.png" class="photoFrame">
@@ -49,60 +48,79 @@
 						</div>
 					</md-list-item>
 				</md-list>
-					
 				<div class="projects">
 					<span class="label">Projects</span>
-					<span class="plus">+</span>
+					<md-button ng-click="toggleRight()" class="md-icon-button plus" aria-label="Add">
+						<md-icon md-svg-icon="img/add.svg"></md-icon>
+					</md-button>
 				</div>
-		    	
-		    	<!--
-		    	<user-card name="User name"></user-card>
-		    	
-		    	<md-divider md-inset ng-if="!$last"></md-divider>
-		    	-->
-	
-		    </md-sidenav>
-		
-		    <md-content flex layout-padding class="middle">
-		        <div layout="column" layout-align="top center">
-			        <div>
-			            <md-button ng-click="toggleLeft()" class="md-primary" hide-gt-md>
-				            Toggle left
-			            </md-button>
-			        </div>
-		        	<div>
-						<md-button ng-click="toggleRight()" ng-hide="isOpenRight()" class="md-primary">
-							Toggle right
-						</md-button>
-		        	</div>
-		        </div>
-		        
+
 				
-				<div flex></div>
-		    </md-content>
-	
-		    <md-sidenav class="md-sidenav-right md-whiteframe-4dp side" md-component-id="right">
-		
-		        <md-toolbar class="side">
-		        	<p style="text-align: center;">Create new project</p>
-		        </md-toolbar>
-		      
-		        <md-content ng-controller="RightCtrl" md-theme="myTheme" class="side" layout-padding>
-			        <form>
-			            <md-input-container>
-			            	<label style="color:#f6f6f6" for="projectName">Project name</label>
-							<input type="text" id="projectName" ng-model="data" md-autofocus>
-			            </md-input-container>
-			        </form>
-			        <md-button ng-click="close()" class="md-primary">
-			        	Close
-			        </md-button>
-		        </md-content>  
+				
+				
+				
+
+
+				<!--
+		    	<user-card name="User name"></user-card>
+		    	-->
+		    	
+
 			</md-sidenav>
+
+			<!--============== MAIN CONTENT =================-->
+			<md-content flex layout-padding class="middle">
+				<div layout="column" layout-align="top center">
+					<div>
+						<!-- Button for left nav toggle. -->
+						<md-button ng-click="toggleLeft()" class="md-icon-button" hide-gt-md aria-label="Forward">
+							<md-icon md-svg-icon="img/leftForward.svg"></md-icon>
+						</md-button>
+					</div>
+
+
+				<!--
+					<md-divider md-inset ng-if="!$last"></md-divider>
+		    	-->
+
+
+				</div>
+				<div flex></div>
+			</md-content>
+
+			
+			
+			
+			<!--------- Right Sidenav for NEW PROJECTS -------->
+			<md-sidenav class="md-sidenav-right md-whiteframe-4dp side" md-component-id="right">
+				<div ng-controller="RightCtrl">
+					<md-toolbar class="side">
+						<md-button ng-click="close()" class="md-icon-button esc" aria-label="Escape">
+							<md-icon style="margin-left:-5px;" md-svg-icon="img/esc.svg"></md-icon>
+						</md-button>
+						<p class="escWord">ESC</p>
+						<p style="text-align: center;">Create new project</p>
+					</md-toolbar>
+					<md-content md-theme="myTheme" class="side" layout-padding>
+						<form>
+							<md-input-container>
+								<label style="color:#f6f6f6" for="projectName">Project name</label>
+								<input type="text" id="projectName" ng-model="data" md-autofocus>
+							</md-input-container>
+						</form>
+					</md-content>
+				<md-button ng-click="close()" class="md-icon-button check" aria-label="Check">
+					<md-icon md-svg-icon="img/check.svg"></md-icon>
+				</md-button>
+				</div>
+			</md-sidenav>
+
+
+
 		</section>
 	</div>
 
-		
+
 	<!---------------------------------------------
 	
 	<div class="container" layout="row" flex>
@@ -147,6 +165,7 @@
 		<button ng-click="addItem()">Add</button>
 		<p>{{errortext}}</p>
 	-->
-	
+
 </body>
+
 </html>
