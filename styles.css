@@ -24,7 +24,7 @@ md-list-item .md-avatar {
     margin-top: 30px;
 	padding: 15px;
 }
-.label {
+.labelProjects {
 	color: #b3bbcb;
 }
 .plus {
@@ -42,7 +42,8 @@ md-list-item .md-avatar {
 	left: 10px;
 	font-size: 10px;
 }
-form.ng-pristine.ng-valid {
+.md-sidenav-right md-input-container, 
+.md-sidenav-right md-input-container label{
 	padding-left: 40px;
 }
 .check {
