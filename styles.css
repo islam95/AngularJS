@@ -55,8 +55,15 @@ md-list-item .md-avatar {
 	bottom: 20px;
 	right: 20px;
 }
-.active {
-	
+.logout{
+	position: absolute;
+	bottom: 5px;
+	left: 45px;
+}
+
+.activeProject {
+	background-color: #6b6b99;
+	border-radius: 5px;
 }
 
 
