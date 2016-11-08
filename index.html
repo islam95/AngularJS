@@ -23,10 +23,10 @@
 	<!------------------------------------------------->
 
 	<div ng-controller="AppCtrl" layout="column" style="height:100%;" ng-cloak>
-		
+
 		<section layout="row" flex>
 			<!--============== LEFT SIDE ==================-->
-			<md-sidenav class="md-sidenav-left side sidePadding" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="1">
+			<md-sidenav class="md-sidenav-left side" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="1">
 				<!--
 		    	<md-card>
 					<md-card-header>
@@ -48,41 +48,49 @@
 						</div>
 					</md-list-item>
 				</md-list>
-				<div class="projects">
-					<span class="labelProjects">Projects</span>
-					<md-button ng-click="toggleRight()" class="md-icon-button plus" aria-label="Add">
-						<md-icon md-svg-icon="img/add.svg"></md-icon>
-					</md-button>
-				</div>
 				
 				<md-list>
-					  <md-list-item class="activeProject">
+					<md-list-item>
+						<p class="labelProjects">Projects</p>
+						<div class="md-secondary">
+							<md-button ng-click="toggleRight()" class="md-icon-button" aria-label="Add">
+								<md-icon md-svg-icon="img/add.svg"></md-icon>
+							</md-button>
+						</div>
+					</md-list-item>
+					
+					<md-list-item class="activeProject">
 						<p>Private</p>
 						<div class="md-secondary">8</div>
-					  </md-list-item>
-					  <md-list-item>
+					</md-list-item>
+					<md-list-item>
 						<p>Decode</p>
 						<div class="md-secondary">25</div>
-					  </md-list-item>
+					</md-list-item>
 					<md-list-item>
 						<p>Family</p>
 						<div class="md-secondary">3</div>
-					  </md-list-item>
-					  <md-list-item>
+					</md-list-item>
+					<md-list-item>
 						<p>Cookie</p>
 						<div class="md-secondary">13</div>
-					  </md-list-item>
-				 </md-list>
+					</md-list-item>
+					<!--
+					<md-list-item class="logout">
+						<p>Log out</p>
+					</md-list-item>
+					-->
+				</md-list>
 				
 				<div class="logout">
-					<p>Log out</p>		
+					<p>Log out</p>
 				</div>
 			</md-sidenav>
 
 			<!--============== MAIN CONTENT =================-->
 			<md-content flex layout-padding class="middle">
-				
-				
+
+
 				<div layout="column" layout-align="top center">
 					<div>
 						<!-- Button for left nav toggle. -->
@@ -91,19 +99,19 @@
 						</md-button>
 					</div>
 
-				<!--
+					<!--
 					<md-divider md-inset ng-if="!$last"></md-divider>
 		    	-->
 
 				</div>
-				
-				
+
+
 				<div flex></div>
 			</md-content>
 
-			
-			
-			
+
+
+
 			<!--------- Right Sidenav for NEW PROJECTS -------->
 			<md-sidenav class="md-sidenav-right md-whiteframe-4dp side" md-component-id="right">
 				<div ng-controller="RightCtrl">
@@ -122,9 +130,9 @@
 							</md-input-container>
 						</form>
 					</md-content>
-				<md-button ng-click="close()" class="md-icon-button check" aria-label="Check">
-					<md-icon md-svg-icon="img/check.svg"></md-icon>
-				</md-button>
+					<md-button ng-click="close()" class="md-icon-button check" aria-label="Check">
+						<md-icon md-svg-icon="img/check.svg"></md-icon>
+					</md-button>
 				</div>
 			</md-sidenav>
 
@@ -134,7 +142,7 @@
 	</div>
 
 
-	
+
 	<!--
 		<ul>
 			<li ng-repeat="item in toDoList">
