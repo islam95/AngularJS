@@ -3,10 +3,11 @@ body {
 	margin: 0;
 	padding: 0;
 }
+/* Left side bar */
+
 .side {
 	font-family: SFUIText;
-	background-image:url(img/sidenav.png);
-	background-repeat: no-repeat;
+	background-color: #292c33;
 	padding: 0 30px;
 	font-weight: 600;
 }
@@ -23,23 +24,28 @@ md-list-item .md-avatar {
 	top: 3px;
 	margin-left: -5px;
 }
-md-list-item, 
+
+md-list-item,
 .md-list-item-text {
 	font-size: 15px;
 	line-height: 14px;
 }
+
 .labelProjects {
 	color: #b3bbcb;
 	font-size: 12px;
 	line-height: 14px;
 	padding-left: 17px;
-	
 }
-md-list-item, md-list-item .md-list-item-inner,
-md-list-item .md-list-item-inner:before, md-list-item:before {
+
+md-list-item,
+md-list-item .md-list-item-inner,
+md-list-item .md-list-item-inner:before,
+md-list-item:before {
 	min-height: 40px;
-	border-radius: 8px;
+	border-radius: 4px;
 }
+
 .activeProject {
 	background-color: #6b6b99;
 }
@@ -48,42 +54,58 @@ md-list-item .md-list-item-inner:before, md-list-item:before {
 	top: 847px;
 }
 */
-.logout{
+.logout {
 	position: absolute;
 	bottom: 5px;
 	left: 45px;
 }
 
+/* Right side bar */
+
+.md-sidenav-right {
+	width: 35.1%;
+	font-family: SFUIText;
+	font-weight: 500;
+	color: #ffffff;
+	background-color: #292c33;
+}
+
 .esc {
 	position: absolute;
-	top: 10px;
+	top: 5px;
+	left: -5px;
 }
-.escWord {
-	position: absolute;
-	top: 30px;
-	left: 10px;
-	font-size: 10px;
+
+.rightHeaderText {
+	text-align: center;
+	font: 500 18px / 14px SFUIText;
+	
 }
-.md-sidenav-right md-input-container, 
-.md-sidenav-right md-input-container label{
-	padding-left: 40px;
+
+.md-sidenav-right md-content {
+	background-color: #292c33;
+	padding: 0 78px;
 }
-.check {
-	width: 36px;
-	height: 36px;
+
+.md-sidenav-right md-input-container {
+	font: 400 15px / 14px SFUIText;
+}
+
+.md-sidenav-right md-input-container label {
+	color: #f6f6f6;
+}
+
+.done {
 	position: absolute;
 	background-color: #6b6b99;
 	border-radius: 50%;
-	bottom: 20px;
-	right: 20px;
+	bottom: 30px;
+	right: 30px;
 }
-
-
-
-
-
-
-
+.md-button.md-icon-button{
+	width: 50px;
+	height: 50px;
+}
 
 /*
 md-card {
@@ -92,7 +114,39 @@ md-card {
 }
 */
 
-.main {
-	background-image:url(img/bg.jpg);
-	background-repeat: no-repeat;
+/* Main Content */
+.middle {
+	background-color: #f7f7f7;
+	padding: 0px;
+	margin: 0px;
 }
+
+.md-toolbar-tools{
+	height: 50px;
+	padding-right: 16px;
+}
+.searchBar.md-button.md-icon-button {
+	padding: 0px;
+}
+
+
+
+
+
+
+.plus {
+	position: absolute;
+	background-color: #6b6b99;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	bottom: 30px;
+	right: 30px;
+}
+/* For the plus inside the main content*/
+.middle .md-button.md-icon-button {
+	line-height: 0px;
+}
+
+
+

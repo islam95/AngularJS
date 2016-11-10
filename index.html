@@ -53,7 +53,7 @@
 					<md-list-item>
 						<p class="labelProjects">Projects</p>
 						<div class="md-secondary">
-							<md-button ng-click="toggleRight()" class="md-icon-button" aria-label="Add">
+							<md-button ng-click="toggleRight('right')" class="md-icon-button" aria-label="Add">
 								<md-icon md-svg-icon="img/add.svg"></md-icon>
 							</md-button>
 						</div>
@@ -89,59 +89,108 @@
 
 			<!--============== MAIN CONTENT =================-->
 			<md-content flex layout-padding class="middle">
-
-
-				<div layout="column" layout-align="top center">
-					<div>
-						<!-- Button for left nav toggle. -->
+				
+				<div layout="column" layout-align="top center" style="padding:0px;">
+					<md-toolbar style="background-color: #f7f7f7;" class="searchBar">
+					  <div class="md-toolbar-tools">
+						  <!-- Button for left nav toggle. -->
 						<md-button ng-click="toggleLeft()" class="md-icon-button" hide-gt-md aria-label="Forward">
 							<md-icon md-svg-icon="img/leftForward.svg"></md-icon>
 						</md-button>
-					</div>
-
-					<!--
-					<md-divider md-inset ng-if="!$last"></md-divider>
-		    	-->
+						<md-button class="md-icon-button" aria-label="Search">
+						  <md-icon md-svg-icon="img/search.svg"></md-icon>
+						</md-button>
+						<span flex></span>
+						  
+						  <div id="menuContainer" ng-controller="menuController as ctrl">
+								<md-menu md-position-mode="target-right target" >
+								   <md-button aria-label="More" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+									  <md-icon md-menu-origin md-svg-icon="img/more.svg"></md-icon>
+								   </md-button>
+								   <md-menu-content width="3" >
+									  <md-menu-item ng-repeat="item in ['Edit', 'Delete']">
+										 <md-button ng-click="ctrl.menuItemClick($index)">
+											<div layout="row">
+											   <p flex>{{item}}</p>
+											</div>
+										 </md-button>
+									  </md-menu-item>
+								   </md-menu-content>
+								</md-menu>
+						   </div>
+						
+						  
+						  
+						  
+					  </div>
+						<md-divider></md-divider>
+					</md-toolbar>
+					
+					
+					
+					
 
 				</div>
 
+					
+				
+				<md-button ng-click="toggleRight('newTask')" class="md-icon-button plus" aria-label="Add">
+					<img src="img/plus.png">
+				</md-button>
 
 				<div flex></div>
 			</md-content>
 
-
-
-
 			<!--------- Right Sidenav for NEW PROJECTS -------->
-			<md-sidenav class="md-sidenav-right md-whiteframe-4dp side" md-component-id="right">
+			<md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
 				<div ng-controller="RightCtrl">
-					<md-toolbar class="side">
-						<md-button ng-click="close()" class="md-icon-button esc" aria-label="Escape">
-							<md-icon style="margin-left:-5px;" md-svg-icon="img/esc.svg"></md-icon>
-						</md-button>
-						<p class="escWord">ESC</p>
-						<p style="text-align: center;">Create new project</p>
-					</md-toolbar>
-					<md-content md-theme="myTheme" class="side" layout-padding>
+					<md-button ng-click="close()" class="md-icon-button esc" aria-label="Close">
+						<img src="img/escape.png">
+					</md-button>
+					<p class="rightHeaderText">Create new project</p>
+					<md-content>
 						<form>
-							<md-input-container>
-								<label style="color:#f6f6f6; padding-left:40px;" for="projectName">Project name</label>
+							<md-input-container class="md-block" md-theme="myTheme">
+								<label for="projectName">Project name</label>
 								<input type="text" id="projectName" ng-model="data" md-autofocus>
 							</md-input-container>
 						</form>
 					</md-content>
-					<md-button ng-click="close()" class="md-icon-button check" aria-label="Check">
-						<md-icon md-svg-icon="img/check.svg"></md-icon>
+					<md-button ng-click="close()" class="md-icon-button done" aria-label="Done">
+						<md-icon md-svg-icon="img/done.svg"></md-icon>
 					</md-button>
 				</div>
 			</md-sidenav>
-
-
+			
+			<!--================= Right Sidenav for NEW TASKS ===============-->
+			<!--
+			<md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="newTask">
+				<div ng-controller="NewTaskCtrl">
+					<md-button ng-click="close()" class="md-icon-button esc" aria-label="Close">
+						<img src="img/escape.png">
+					</md-button>
+					<p class="rightHeaderText">Create new task</p>
+					<md-content>
+						<form>
+							<md-input-container class="md-block" md-theme="myTheme">
+								<label for="taskName">Task name</label>
+								<input type="text" id="taskName" ng-model="taskData" md-autofocus>
+							</md-input-container>
+							<md-input-container class="md-block" md-theme="myTheme">
+								<label for="description">Description</label>
+								<input type="text" id="description" ng-model="descriptionData" md-autofocus>
+							</md-input-container>
+						</form>
+					</md-content>
+					<md-button ng-click="close()" class="md-icon-button done" aria-label="Done">
+						<md-icon md-svg-icon="img/done.svg"></md-icon>
+					</md-button>
+				</div>
+			</md-sidenav>
+			-->
 
 		</section>
 	</div>
-
-
 
 	<!--
 		<ul>
