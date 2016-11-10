@@ -137,3 +137,32 @@ app.controller('menuController', function menuController ($scope, $mdDialog) {
 	   originatorEv = null;
 	};
 });
+
+app.controller('taskCtrl', function ($scope){
+	$scope.date = new Date();
+	var self = this;
+		
+	self.tasks = [{
+		'id': 1,
+		'taskName': 'Create a company',
+		'Date': 'Today',
+		'taskContent': 'Bla Bla 12345' 
+	}, {
+		'id': 2,
+		'taskName': 'Call in barber shop',
+		'Date': 'Tomorrow',
+		'taskContent': 'Bla Bla 12345' 
+	}, {
+		'id': 3,
+		'taskName': 'Earn a lot of money',
+		'Date': 'Friday (09.06.2016)',
+		'taskContent': 'Bla Bla 12345' 
+	},  {
+		'id': 4,
+		'taskName': 'Go to the shop',
+		'Date': 'Friday (09.06.2016)',
+		'taskContent': 'Bla Bla 12345' 
+	}];
+	self.selectedId = 2;
+	
+});

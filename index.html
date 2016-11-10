@@ -3,6 +3,7 @@
 
 <head>
 	<title>Projects</title>
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="Author" content="Islam Dudaev" />
 	<meta name="description" content="The AgularJS task for getting a job." />
@@ -118,20 +119,30 @@
 								   </md-menu-content>
 								</md-menu>
 						   </div>
-						
-						  
-						  
-						  
 					  </div>
 						<md-divider></md-divider>
 					</md-toolbar>
-					
-					
-					
-					
-
 				</div>
 
+				
+					
+					
+					
+    
+	<div ng-controller='taskCtrl as tc'>
+		<div ng-repeat='task in tc.tasks'>
+			<md-subheader class="md-no-sticky">{{task.Date}}</md-subheader>
+			
+			<md-radio-group ng-model="tc.selectedId" >
+				  <md-radio-button flex ng-value="task.id" class="md-primary">
+					{{task.taskName}}
+				  </md-radio-button>
+				<md-divider md-inset ng-if="!$last"></md-divider>
+			</md-radio-group>
+		</div>
+</div>
+
+					
 					
 				
 				<md-button ng-click="toggleRight('newTask')" class="md-icon-button plus" aria-label="Add">
