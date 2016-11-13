@@ -129,7 +129,7 @@ md-card {
 	padding: 0px;
 }
 .plus {
-	position: absolute;
+	position: fixed;
 	background-color: #6b6b99;
 	border-radius: 50%;
 	width: 50px;
@@ -155,9 +155,29 @@ md-card {
 	vertical-align: middle;
 	border-radius: 8px;
 }
+.date{
+	font-weight: 500;
+}
+.task_joint_class {
+	background-color: #ffffff;
+	height: 120px;
+	border-radius: 8px;
+	margin-bottom: 15px;
+}
+.joint_radio {
+	padding: 0 30px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	line-height: 40px;
+	vertical-align: middle;
+}
+.devider {
+	margin-right: 60px;
+	margin-top: -15px;
+	margin-left: 60px;
+}
 md-radio-button .md-container {
 	left: 30px;
-	
 }
 md-radio-button .md-label {
 	padding-left: 15px;
@@ -171,6 +191,7 @@ md-radio-button .md-label {
 }
 .md-subheader .md-subheader-inner {
 	padding: 12px;
+	font-weight: bold;
 }
 .verticalLine {
 	width: 1px;
