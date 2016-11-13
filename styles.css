@@ -128,12 +128,6 @@ md-card {
 .searchBar.md-button.md-icon-button {
 	padding: 0px;
 }
-
-
-
-
-
-
 .plus {
 	position: absolute;
 	background-color: #6b6b99;
@@ -148,5 +142,32 @@ md-card {
 	line-height: 0px;
 }
 
+.tasksContent{
+	padding: 0 230px;
+}
+
+.task_class {
+	padding: 0 30px;
+	background-color: #ffffff;
+	height: 60px;
+	line-height: 60px;
+	vertical-align: middle;
+	border-radius: 8px;
+}
+md-radio-button .md-container {
+	left: 30px;
+	
+}
+.tasksContent .md-subheader {
+	background-color: #f7f7f7;
+	line-height: 0;
+	color: #b3bbcb;
+}
+.md-subheader .md-subheader-inner {
+	padding: 12px;
+}
+.middle {
+	background-color: #f7f7f7;
+}
 
 
