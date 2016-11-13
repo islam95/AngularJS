@@ -148,15 +148,21 @@ md-card {
 
 .task_class {
 	padding: 0 30px;
+	padding-top: 8px;
 	background-color: #ffffff;
 	height: 60px;
-	line-height: 60px;
+	line-height: 40px;
 	vertical-align: middle;
 	border-radius: 8px;
 }
 md-radio-button .md-container {
 	left: 30px;
 	
+}
+md-radio-button .md-label {
+	padding-left: 15px;
+	margin-left: 45px;
+	border-left: 1px solid #eaeaea;
 }
 .tasksContent .md-subheader {
 	background-color: #f7f7f7;
@@ -165,6 +171,10 @@ md-radio-button .md-container {
 }
 .md-subheader .md-subheader-inner {
 	padding: 12px;
+}
+.verticalLine {
+	width: 1px;
+	height: 40px;
 }
 .middle {
 	background-color: #f7f7f7;

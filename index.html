@@ -124,18 +124,18 @@
 					</md-toolbar>
 				</div>
 
-	<div ng-controller='taskCtrl as tc' class="tasksContent">
-		<div ng-repeat='task in tc.tasks'>
-			<md-subheader class="md-no-sticky">{{task.Date}}</md-subheader>
-			
-			<md-radio-group ng-model="tc.selectedId" >
-				  <md-radio-button flex ng-value="task.id" class="md-primary task_class md-whiteframe-5dp">
-					{{task.taskName}}
-				  </md-radio-button>
-				<!-- <md-divider md-inset ng-if="!$last"></md-divider> -->
-			</md-radio-group>
-		</div>
-	</div>
+				<div ng-controller='taskCtrl as tc' class="tasksContent">
+					<div ng-repeat='task in tc.tasks'>
+						<md-subheader class="md-no-sticky">{{task.Date}}</md-subheader>
+						
+						<md-radio-group ng-model="tc.selectedId" >
+							  <md-radio-button flex ng-value="task.id" class="md-primary task_class md-whiteframe-5dp">
+								{{task.taskName}}
+							  </md-radio-button>
+							<!-- <md-divider md-inset ng-if="!$last"></md-divider> -->
+						</md-radio-group>
+					</div>
+				</div>
 
 					
 					
