@@ -25,9 +25,11 @@ app.controller("toDoList", function ($scope) {
 app.controller('AppCtrl', function ($scope, $timeout, $mdSidenav, $log) {
 	$scope.toggleLeft = buildDelayedToggler('left');
 	$scope.toggleRight = buildToggler('right');
+	//$scope.toggleRight = buildToggler('newTask');
 	$scope.isOpenRight = function () {
 		return $mdSidenav('right').isOpen();
 	};
+	
 	// User photo and name
 	var imagePath = 'img/userPhoto.jpg';
 	$scope.messages = [{
@@ -97,6 +99,17 @@ app.controller('RightCtrl', function ($scope, $timeout, $mdSidenav, $log) {
 			});
 	};
 });
+/*
+app.controller('NewTaskCtrl', function ($scope, $timeout, $mdSidenav, $log) {
+	$scope.close = function () {
+		// Component lookup should always be available since we are not using `ng-if`
+		$mdSidenav('newTask').close()
+			.then(function () {
+				$log.debug("close New Task Sidebar is done");
+			});
+	};
+});
+*/
 // Configuring theme if needed
 app.config(function ($mdThemingProvider) {
 	// Configure a dark theme
@@ -105,18 +118,51 @@ app.config(function ($mdThemingProvider) {
 		.dark();
 });
 
-/*
-app.directive('userCard', function () {
-    return {
-      restrict: 'E',
-      templateUrl: 'userCard.tmpl.html',
-      scope: {
-        name: '@',
-        theme: '@'
-      },
-      controller: function ($scope) {
-        $scope.theme = $scope.theme || 'default';
-      }
-    }
+app.controller('menuController', function menuController ($scope, $mdDialog) {
+	var originatorEv;
+	
+	this.openMenu = function($mdOpenMenu, ev) {
+		originatorEv = ev;
+	    $mdOpenMenu(ev);
+	};
+	
+	this.menuItemClick = function(index) {
+	   $mdDialog.show(
+		  $mdDialog.alert()
+			.title('Hello')
+			.textContent('Menu Item clicked, index: ' + index)
+			.ok('OK')
+			.targetEvent(originatorEv)
+	   );
+	   originatorEv = null;
+	};
 });
-*/
+
+app.controller('taskCtrl', function ($scope){
+	$scope.date = new Date();
+	var self = this;
+		
+	self.tasks = [{
+		'id': 1,
+		'taskName': 'Create a company',
+		'Date': 'Today',
+		'taskContent': 'Bla Bla 12345' 
+	}, {
+		'id': 2,
+		'taskName': 'Call in barber shop',
+		'Date': 'Tomorrow',
+		'taskContent': 'Bla Bla 12345' 
+	}, {
+		'id': 3,
+		'taskName': 'Earn a lot of money',
+		'Date': 'Friday (09.06.2016)',
+		'taskContent': 'Bla Bla 12345' 
+	},  {
+		'id': 4,
+		'taskName': 'Go to the shop',
+		'Date': 'Friday (09.06.2016)',
+		'taskContent': 'Bla Bla 12345' 
+	}];
+	self.selectedId = 2;
+	
+});
