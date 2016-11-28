@@ -1,1 +1,1 @@
-AngularJS Material Project for job interview.
+AngularJS Material Project.
